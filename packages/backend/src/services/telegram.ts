@@ -112,13 +112,18 @@ Just send a command with a wallet address to get started!
             // Create inline keyboard with clickable wallet addresses
             const keyboard: TelegramBot.InlineKeyboardButton[][] = [];
 
+            // Different emojis for variety
+            const emojiList = ['🔷', '🔶', '🟢', '🟡', '🔴', '🟣', '🟠', '🔵', '🟤', '⚫'];
+
             topContacts.forEach(([addr, data], i) => {
-                const emoji = data.direction === 'sent' ? '📤' : data.direction === 'received' ? '📥' : '🔄';
-                response += `\n${i + 1}. ${emoji} *${data.count} txs*\n\`${addr}\`\n`;
+                const directionEmoji = data.direction === 'sent' ? '📤' : data.direction === 'received' ? '📥' : '🔄';
+                const numberEmoji = emojiList[i] || '⭐';
+
+                response += `\n${numberEmoji} ${directionEmoji} *${data.count} txs*\n\`${addr}\`\n`;
 
                 // Add button for each contact
                 keyboard.push([{
-                    text: `🔍 Track ${addr.slice(0, 8)}...${addr.slice(-6)}`,
+                    text: `🔍 Track This Wallet`,
                     callback_data: `track_${addr}`
                 }]);
             });

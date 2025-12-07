@@ -18,9 +18,9 @@ git push -u origin main
 3. Import your `trackverse` repository
 4. Configure:
    - **Framework Preset:** Next.js
-   - **Root Directory:** `apps/web`
-   - **Build Command:** `npm run build`
-   - **Output Directory:** `.next`
+   - **Root Directory:** `.` (Leave empty / default)
+   - **Build Command:** `npm run build --workspace=apps/web` (Or leave empty to use `vercel.json`)
+   - **Output Directory:** `apps/web/.next` (Or leave empty to use `vercel.json`)
 
 ### 3. Add Environment Variables
 In Vercel dashboard → Project Settings → Environment Variables:

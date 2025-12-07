@@ -1,12 +1,5 @@
 {
     "buildCommand": "npm run build --workspace=apps/web",
     "outputDirectory": "apps/web/.next",
-    "installCommand": "npm install",
-    "framework": "nextjs",
-    "env": {
-        "NEXT_PUBLIC_SUPABASE_URL": "@supabase-url",
-        "NEXT_PUBLIC_SUPABASE_ANON_KEY": "@supabase-anon-key",
-        "NEXT_PUBLIC_API_URL": "@api-url",
-        "NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID": "@walletconnect-project-id"
-    }
+    "ignoreCommand": "git diff --quiet HEAD^ HEAD ./"
 }

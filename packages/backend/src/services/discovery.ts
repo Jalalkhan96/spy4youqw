@@ -96,12 +96,12 @@ export async function discoverWallets(targetId: string, targetAddress: string) {
 
     await sendAlert(
         `🔍 *Wallet Discovery Complete*\n\n` +
-        `📍 *Wallet:* \`${shortAddr}\`\n` +
+        `📍 *Wallet:*\n\`${targetAddress}\`\n\n` +
         `👥 *Unique Contacts:* ${totalContacts}\n` +
         `📤 *Sent Transactions:* ${totalTxSent}\n` +
         `📥 *Received Transactions:* ${totalTxReceived}\n\n` +
-        `Top sender: \`${topReceived[0]?.address.slice(0, 10) || 'N/A'}...\`\n` +
-        `Top receiver: \`${topSent[0]?.address.slice(0, 10) || 'N/A'}...\``
+        `🔝 *Top Sender:*\n\`${topReceived[0]?.address || 'N/A'}\`\n\n` +
+        `🎯 *Top Receiver:*\n\`${topSent[0]?.address || 'N/A'}\``
     );
 
     return { topSent, topReceived, recentSent, recentReceived };
